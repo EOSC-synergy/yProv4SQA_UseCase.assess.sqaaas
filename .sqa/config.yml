@@ -6,7 +6,7 @@ config:
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/Yousaf95/yProv4SQA_UseCase:
       branch: main
-      repo: https://github.com/Yousaf95/yProv4SQA_UseCase
+      repo: https://github.com/Yousaf95/yProv4SQA_UseCase/
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
@@ -15,50 +15,50 @@ sqa_criteria:
     repos:
       github.com/Yousaf95/yProv4SQA_UseCase git:
         commands:
-        - /usr/bin/env sh .sqa/script.sunny-ecru-bat.sh
-        container: qc.acc_nippy-mauve-cheetah
+        - /usr/bin/env sh .sqa/script.jumpy-sepia-tiger.sh
+        container: qc.acc_queasy-indigo-hamster
   QC.Doc:
     repos:
       github.com/Yousaf95/yProv4SQA_UseCase find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.beady-asparagus-malamute.sh
-        container: qc.doc_skanky-copper-dogfish
+        - /usr/bin/env sh .sqa/script.whiny-heliotrope-squirrel.sh
+        container: qc.doc_lovely-mauve-eleuth
       github.com/Yousaf95/yProv4SQA_UseCase git:
         commands:
-        - /usr/bin/env sh .sqa/script.leaky-taupe-ray.sh
-        container: qc.doc_lousy-harlequin-cuscus
+        - /usr/bin/env sh .sqa/script.shaky-thistle-dane.sh
+        container: qc.doc_thirsty-plum-bullfrog
       github.com/Yousaf95/yProv4SQA_UseCase markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.stinky-cinnabar-coati.sh
-        container: qc.doc_frumpy-cardinal-barnacle
+        - /usr/bin/env sh .sqa/script.fuzzy-wisteria-akbash.sh
+        container: qc.doc_crappy-puce-chow
   QC.Lic:
     repos:
       github.com/Yousaf95/yProv4SQA_UseCase licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.paltry-amethyst-binturong.sh
-        container: qc.lic_sloppy-amethyst-paradise
+        - /usr/bin/env sh .sqa/script.muzzy-orange-cichlid.sh
+        container: qc.lic_stinky-malachite-bobcat
   QC.Sec:
     repos:
       github.com/Yousaf95/yProv4SQA_UseCase bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.dorky-crimson-quokka.sh
-        container: qc.sec_surly-platinum-armadillo
+        - /usr/bin/env sh .sqa/script.tasty-brown-moth.sh
+        container: qc.sec_tasty-sangria-macaque
   QC.Sty:
     repos:
       github.com/Yousaf95/yProv4SQA_UseCase flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.beady-eggplant-uguisu.sh
-        container: qc.sty_cozy-cream-scorpion
+        - /usr/bin/env sh .sqa/script.snazzy-jade-jackal.sh
+        container: qc.sty_beady-chartreuse-warthog
   QC.Uni:
     repos:
       github.com/Yousaf95/yProv4SQA_UseCase pytest:
         commands:
-        - /usr/bin/env sh .sqa/script.ready-gold-jaguar.sh
-        container: qc.uni_gamy-beige-vulture
+        - /usr/bin/env sh .sqa/script.shabby-thistle-rabbit.sh
+        container: qc.uni_cranky-lilac-crane
   QC.Ver:
     repos:
       github.com/Yousaf95/yProv4SQA_UseCase get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.wheezy-cinnabar-mayfly.sh
-        container: qc.ver_pasty-peach-mist
+        - /usr/bin/env sh .sqa/script.trippy-blue-oyster.sh
+        container: qc.ver_slimy-ochre-moth
 timeout: 5400
