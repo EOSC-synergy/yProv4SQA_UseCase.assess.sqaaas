@@ -1,0 +1,64 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/Yousaf95/yProv4SQA_UseCase:
+      branch: main
+      repo: https://github.com/Yousaf95/yProv4SQA_UseCase
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/Yousaf95/yProv4SQA_UseCase git:
+        commands:
+        - /usr/bin/env sh .sqa/script.gloppy-malachite-wombat.sh
+        container: qc.acc_pretty-gamboge-retriever
+  QC.Doc:
+    repos:
+      github.com/Yousaf95/yProv4SQA_UseCase find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.skanky-sapphire-ragdoll.sh
+        container: qc.doc_nerdy-khaki-swan
+      github.com/Yousaf95/yProv4SQA_UseCase git:
+        commands:
+        - /usr/bin/env sh .sqa/script.bumpy-orange-birman.sh
+        container: qc.doc_gimpy-tomato-chin
+      github.com/Yousaf95/yProv4SQA_UseCase markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.slaphappy-mustard-gerbil.sh
+        container: qc.doc_crabby-corn-liger
+  QC.Lic:
+    repos:
+      github.com/Yousaf95/yProv4SQA_UseCase licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.silly-amaranth-swan.sh
+        container: qc.lic_pretty-denim-bison
+  QC.Sec:
+    repos:
+      github.com/Yousaf95/yProv4SQA_UseCase bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.gimpy-gamboge-beaver.sh
+        container: qc.sec_woolly-chocolate-deer
+  QC.Sty:
+    repos:
+      github.com/Yousaf95/yProv4SQA_UseCase flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.paltry-gold-spider.sh
+        container: qc.sty_shabby-turquoise-mole
+  QC.Uni:
+    repos:
+      github.com/Yousaf95/yProv4SQA_UseCase pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.stealthy-sangria-saola.sh
+        container: qc.uni_squirrely-ruby-dunker
+  QC.Ver:
+    repos:
+      github.com/Yousaf95/yProv4SQA_UseCase get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.zippy-ruby-chinchilla.sh
+        container: qc.ver_lousy-rose-deer
+timeout: 5400
